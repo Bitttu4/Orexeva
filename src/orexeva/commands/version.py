@@ -1,5 +1,7 @@
 import typer
 
+from orexeva.constants import APP_NAME, VERSION
+
 app = typer.Typer()
 
 
@@ -8,4 +10,4 @@ def version():
     """
     Show the current Orexeva version.
     """
-    typer.echo("Orexeva v0.1.0")
+    typer.echo(f"{APP_NAME} v{VERSION}")
