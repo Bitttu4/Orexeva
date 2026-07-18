@@ -2,4 +2,4 @@
 Orexeva CLI Entry Point
 """
 
-from orexeva.registry import app
+from orexeva.cli_registry import app

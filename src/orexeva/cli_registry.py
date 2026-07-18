@@ -4,7 +4,7 @@ Orexeva Command Registry
 Responsible for registering all CLI commands.
 """
 
-import typer
+import typer  # type: ignore[import]
 
 from orexeva.commands.clean import app as clean_app
 from orexeva.commands.doctor import app as doctor_app
