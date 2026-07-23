@@ -9,6 +9,10 @@ class ProviderError(Exception):
     """Base exception for all provider-related errors."""
 
 
+class ProviderAlreadyRegisteredError(ProviderError):
+    """Raised when a provider is registered twice."""
+
+
 class ProviderNotFoundError(ProviderError):
     """Raised when a provider cannot be found."""
 
@@ -19,6 +23,10 @@ class ProviderInstallError(ProviderError):
 
 class ProviderDetectionError(ProviderError):
     """Raised when provider detection fails."""
+
+
+class ProviderHealthError(ProviderError):
+    """Raised when a runtime health check fails."""
 
 
 class ProviderVerificationError(ProviderError):

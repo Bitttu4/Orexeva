@@ -82,7 +82,7 @@ class OllamaProvider(RuntimeProvider):
     Runtime provider implementation for Ollama.
     """
 
-    metadata = ProviderMetadata(
+    _METADATA = ProviderMetadata(
         name="ollama",
         display_name="Ollama",
         category=ProviderCategory.RUNTIME,
@@ -111,6 +111,11 @@ class OllamaProvider(RuntimeProvider):
         self.host = host.rstrip("/")
         self.timeout = timeout
         self._process: _RuntimeProcess | None = None
+
+    @property
+    def metadata(self) -> ProviderMetadata:
+        """Provider metadata."""
+        return self._METADATA
 
     def _url(self, endpoint: str) -> str:
         """Returns the complete Ollama API URL."""

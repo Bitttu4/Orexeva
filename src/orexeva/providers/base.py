@@ -178,7 +178,7 @@ class RuntimeProvider(BaseProvider):
         """Return current runtime status."""
 
     @abstractmethod
-    def list_models(self) -> list[str]:
+    def list_models(self) -> list[dict[str, Any]]:
         """Return installed models."""
 
     @abstractmethod
