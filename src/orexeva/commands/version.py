@@ -1,13 +1,15 @@
+"""Version command."""
+
+from __future__ import annotations
+
 import typer
 
-from orexeva.constants import APP_NAME, VERSION
+from orexeva.core import run_version
 
 app = typer.Typer()
 
 
 @app.callback(invoke_without_command=True)
-def version():
-    """
-    Show the current Orexeva version.
-    """
-    typer.echo(f"{APP_NAME} v{VERSION}")
+def version() -> None:
+    """Show the current Orexeva version."""
+    typer.echo(run_version().to_text())
